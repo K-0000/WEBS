@@ -23,8 +23,8 @@ from flask import request
 from flask import render_template
 
 print("[INFO] loading network...")
-model = tf.keras.models.load_model("Mod")
-lb = pickle.loads(open("Alexlabelbin", "rb").read())
+model = tf.keras.models.load_model("KFOLDcat100.h5")
+lb = pickle.loads(open("KFOLD100lb", "rb").read())
 labels = []
 ricetypes = []
 
@@ -208,4 +208,4 @@ def upload_analyze():
     )
 
 if __name__ == "__main__":
-    app.run(port=8080, debug=True)
+    app.run(host='0.0.0.0',port=8080, debug=True)
